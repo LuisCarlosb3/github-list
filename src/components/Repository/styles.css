@@ -1,0 +1,41 @@
+.repository-container {
+  width: auto;
+  background: white;
+  padding: 2rem 2rem;
+  border: 1px solid black;
+  box-shadow: 2px 2px 0px 1px #ccc;
+}
+.repository-title-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0 0;
+}
+.repository-title{
+  font-weight: 600;
+}
+.repository-created{
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.repository-description{
+  font-size: 0.6rem;
+}
+.langauges-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.langauges-box li {
+  display: inline;
+  margin-right: 15px;
+}
+.langauges-box:last-child {
+  margin-right: 0px;
+}

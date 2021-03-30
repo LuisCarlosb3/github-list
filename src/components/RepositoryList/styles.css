@@ -1,0 +1,38 @@
+.repository-list-container {
+  padding: 0rem 3rem;
+}
+
+#title-line {
+  background: rgba(0,0,0,0.5);
+  height: 1px;
+  width: 100%;
+}
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+.repository-list {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+}
+@media(max-width: 1280px){
+  .repository-list {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+@media(max-width: 960px){
+  .repository-list {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}

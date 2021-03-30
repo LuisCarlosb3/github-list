@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  
+}
+#username-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.githubIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.userName{
+  font-size: 2rem;
+  margin-left: 0.8rem;
+  font-weight: 600;
+}
+.statistic-box{
+  margin: 0 auto;
+  height: 2rem;
+  padding: 5px;
+}
+.account-status {
+  font-size: 1.5rem;
+  margin-left: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.account-status > div {
+  margin-left: 1rem;
+}
