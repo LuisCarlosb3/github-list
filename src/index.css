@@ -1,5 +1,8 @@
+:root {
+  --background:#f6f8fa
+}
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #f6f8fa;
+  background-color: var(--background);
 }

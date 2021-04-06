@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { UserProvider } from './hooks/useUser';
 import './index.css';
-import { Repository } from './pages/Repositories';
-import { UserPage } from './pages/UserPage'
-
+import { Routes } from './routers/routes'
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserPage />
+    <BrowserRouter>
+      <UserProvider>
+        <Routes />
+      </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
