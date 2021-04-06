@@ -1,39 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import githubImg from '../../assets/github.svg'
-import { RequestService } from '../../service/request_service'
-import { UserInfo } from '../../types/UserInfo'
+import { useUsername } from '../../hooks/useUser'
 import './styles.css'
 export function Header(){
-  const [userinfo, setUserInfo] = useState<UserInfo>({
-    id: '',
-    username: '',
-    htmlUrl: '',
-    publicRepos: 0,
-    followers: 0,
-    following: 0
-  })
-  
-  useEffect(()=>{
-    async function requestUserRepos():Promise<void> {      
-      const info = await RequestService.loadUserInfoByUserName('LuisCarlosb3')
-      if(info){
-        setUserInfo(info)
-      }
-    }
-    requestUserRepos()
-  },[])
+  const { userInfo, handleUpdateUserName }= useUsername()
+  // useEffect(()=>{
+  //   handleUpdateUserName(userInfo.username)
+  // },[userInfo.username, handleUpdateUserName])
   return (
     <div className="header">
       <div id="username-container">
         <img src={githubImg} alt="github icon" className="githubIcon"/>
-        <p className="userName">{userinfo.username}</p>
+        <p className="userName">{userInfo.username}</p>
       </div>
       <div className="account-status">
         <div className="statistic-box">
-          Followers: {userinfo.followers}
+          Followers: {userInfo.followers}
         </div>
         <div className="statistic-box">
-          Following: {userinfo.following}
+          Following: {userInfo.following}
         </div>
       </div>
     </div>

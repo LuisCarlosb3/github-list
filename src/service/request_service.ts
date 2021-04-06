@@ -21,19 +21,26 @@ interface UserRequest{
 export class RequestService {
   private static api:AxiosInstance = axios.create({baseURL: 'https://api.github.com'})
   public static async loadUserInfoByUserName(username:string):Promise<UserInfo | null>{
-    const { data } =  await this.api.get(`/users/${username}`)    
-    if(data){
-      const userData:UserRequest = data
-      return {
-        id: userData.id,
-        username: userData.login,
-        htmlUrl: userData.html_url,
-        publicRepos: userData.public_repos,
-        followers: userData.followers,
-        following:  userData.following
+    try {  
+      const response =  await this.api.get(`/users/${username}`)
+      if(response.status === 200){ 
+        const { data } = response
+        if(data){
+          const userData:UserRequest = data
+          return {
+            id: userData.id,
+            username: userData.login,
+            htmlUrl: userData.html_url,
+            publicRepos: userData.public_repos,
+            followers: userData.followers,
+            following:  userData.following
+          }
+        }
       }
+      return null
+    } catch (error) {
+      return null  
     }
-    return null
   }
   public static async loadUserRepositories(username:string):Promise<Repository[]>{
     const { data } =  await this.api.get(`/users/${username}/repos`)
