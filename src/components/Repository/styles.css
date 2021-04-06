@@ -1,11 +1,11 @@
-.repository-container {
+.repository-container-card {
   width: auto;
   background: white;
   padding: 2rem 2rem;
   border: 1px solid black;
   box-shadow: 2px 2px 0px 1px #ccc;
 }
-.repository-title-date {
+.repository-title-date-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,26 +16,26 @@
 p {
   margin: 0 0;
 }
-.repository-title{
+.repository-title-card{
   font-weight: 600;
 }
-.repository-created{
+.repository-created-card{
   font-weight: 400;
   font-size: 0.8rem;
 }
-.repository-description{
+.repository-description-card{
   font-size: 0.6rem;
 }
-.langauges-box{
+.langauges-box-card{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin-top: 1rem;
 }
-.langauges-box li {
+.langauges-box-card li {
   display: inline;
   margin-right: 15px;
 }
-.langauges-box:last-child {
+.langauges-box-card:last-child {
   margin-right: 0px;
 }
