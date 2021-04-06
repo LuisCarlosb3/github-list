@@ -43,7 +43,7 @@ export class RequestService {
     }
   }
   public static async loadUserRepositories(username:string):Promise<Repository[]>{
-    const { data } =  await this.api.get(`/users/${username}/repos`)
+    const { data } =  await this.api.get(`/users/${username}/repos?per_page=100`)
     const repositories:Repository[] = data.map((item:RepositoryRequest)=>{
       return {
         id: item.id,
